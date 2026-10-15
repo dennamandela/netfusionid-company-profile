@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+@source '../../resources/views/**/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@theme {
+    --color-paper: #f5f6f4;
+    --color-ink: #18232c;
+    --color-line: #d8dedc;
+    --color-mint: #b7f3dd;
+    --color-deep: #14262d;
+    --font-body: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Small brand illustrations that do not map cleanly to utility classes. */
+.brand-mark{display:grid;width:29px;height:29px;flex:none;grid-template:repeat(2,1fr)/repeat(2,1fr);gap:3px;transform:rotate(-9deg)}
+.brand-mark i{border-radius:3px 7px 3px 7px;background:#43c79d}
+.brand-mark i:nth-child(2),.brand-mark i:nth-child(3){opacity:.52}
+.menu-toggle span{width:14px;height:1px;background:#263a39;transition:transform .2s}
+.menu-toggle[aria-expanded=true] span:first-child{transform:translateY(3px) rotate(45deg)}
+.menu-toggle[aria-expanded=true] span:last-child{transform:translateY(-3px) rotate(-45deg)}
+.nav-links.is-open{position:absolute;top:69px;right:0;left:0;display:flex;flex-direction:column;align-items:stretch;gap:0;background:#f5f6f4;padding:20px;box-shadow:0 15px 22px #172c2012}
+.nav-links.is-open>a:not(:last-child){border-bottom:1px solid #dce2de;padding:14px 3px}
+.nav-links.is-open>a:last-child{margin-top:15px;text-align:center}
+.hero-art:before{position:absolute;top:62px;left:calc(50% - 180px);width:360px;height:360px;background:radial-gradient(circle,#ffffff85,transparent 70%);content:""}
+.art-grid{background-image:linear-gradient(#39876d12 1px,transparent 1px),linear-gradient(90deg,#39876d12 1px,transparent 1px);background-size:36px 36px;mask-image:linear-gradient(90deg,transparent,#000 30%,#000 85%,transparent)}
+.orbit{position:absolute;top:49%;left:50%;border:1px solid #287f6730;border-radius:50%;transform:translate(-50%,-50%) rotate(-35deg)}
+.orbit-one{width:300px;height:150px}
+.orbit-two{width:230px;height:250px;transform:translate(-50%,-50%) rotate(41deg)}
+.orbit-three{width:330px;height:210px;transform:translate(-50%,-50%) rotate(72deg)}
+.node{width:12px;height:12px;border:3px solid #36b88d;border-radius:50%;background:#fff;box-shadow:0 0 0 5px #ffffff99}
+.node-small{width:9px;height:9px}
+.node-tiny{width:8px;height:8px}
+.work-visual:before,.work-visual:after{position:absolute;width:340px;height:340px;border:1px solid #a3e6cd30;border-radius:50%;content:""}
+.work-visual:after{width:250px;height:250px}
+.work-orbit{position:absolute;width:490px;height:210px;border:1px solid #9be5c94a;border-radius:50%;transform:rotate(-35deg)}
+.contact-orb{position:absolute;top:150px;right:-175px;width:330px;height:330px;border:1px solid #d1f6e311;border-radius:50%}
+.contact-orb:before,.contact-orb:after{position:absolute;inset:40px;border:1px solid #d1f6e311;border-radius:50%;content:""}
+.contact-orb:after{inset:85px;background:radial-gradient(circle,#5ce1ae12,transparent)}
+
+@media (min-width:640px){
+    .brand-mark{width:29px;height:29px}
+    .orbit-one{width:390px;height:190px}
+    .orbit-two{width:300px;height:320px}
+    .orbit-three{width:455px;height:280px}
+    .work-visual:before{width:430px;height:430px}
+    .work-visual:after{width:320px;height:320px}
+    .contact-orb{top:80px;right:-70px;width:510px;height:510px}
+    .contact-orb:before{inset:55px}
+    .contact-orb:after{inset:120px}
+}
+@media (min-width:1024px){.nav-links.is-open{position:static;display:flex;flex-direction:row;align-items:center;gap:38px;background:transparent;padding:0;box-shadow:none}.nav-links.is-open>a:not(:last-child){border:0;padding:0}.nav-links.is-open>a:last-child{margin:0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
