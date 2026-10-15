@@ -19,6 +19,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        if (env('VERCEL')) {
+            config([
+                'session.driver' => 'array',
+                'cache.default' => 'array',
+                'queue.default' => 'sync',
+            ]);
+        }
     }
 }
